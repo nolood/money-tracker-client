@@ -1,5 +1,8 @@
 @import "./../../shared/styles/_variables.scss";
 
-.bg {
-  background-color: $dark;
+.section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }

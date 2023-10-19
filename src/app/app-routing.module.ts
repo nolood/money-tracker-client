@@ -6,12 +6,12 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 const routes: Routes = [
   {
     path: 'login',
-    title: 'Login | TM',
+    title: 'TM | Login',
     component: LoginPageComponent,
   },
   {
     path: 'register',
-    title: 'Registration | TM',
+    title: 'TM | Registration',
     component: RegisterPageComponent,
   },
 ];

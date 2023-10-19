@@ -1,0 +1,18 @@
+<div class="wrapper" (click)="focus()">
+  <input
+    #input
+    [(ngModel)]="value"
+    (focus)="isFocus = true"
+    (blur)="isFocus = false"
+    type="text"
+    class="input"
+  >
+  <span
+    class="placeholder"
+    [ngClass]="{
+      active: isFocus || value
+    }"
+  >
+    {{ placeholder }}
+  </span>
+</div>

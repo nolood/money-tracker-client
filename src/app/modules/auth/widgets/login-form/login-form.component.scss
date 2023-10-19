@@ -1,0 +1,9 @@
+@import "../../../../shared/styles/_variables.scss";
+
+.form {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  background: $dark-text;
+  min-width: 100%;
+}
