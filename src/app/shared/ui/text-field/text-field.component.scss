@@ -15,12 +15,28 @@
   font-size: 1.2rem;
   color: $dark-light;
   user-select: none;
+  cursor: text;
   transform: translateY(-50%);
   transition: all 0.2s ease;
   &.active {
     font-size: 0.8rem;
     transform: translateY(-100%);
     top: 20px;
+  }
+}
+
+.label {
+  position: absolute;
+  left: 0;
+  top: -1.2rem;
+  font-weight: 600;
+  font-size: 14px;
+  color: $white;
+  &.main {
+    color: $accent-main;
+  }
+  &.secondary {
+    color: $accent-secondary;
   }
 }
 

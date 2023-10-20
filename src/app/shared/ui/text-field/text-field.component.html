@@ -1,12 +1,24 @@
 <div class="wrapper" (click)="focus()">
-  <input
-    #input
-    [(ngModel)]="value"
-    (focus)="isFocus = true"
-    (blur)="isFocus = false"
-    type="text"
-    class="input"
-  >
+  <label>
+    <span
+      class="label"
+      [ngClass]="{
+        main: labelColor === 'main',
+        secondary: labelColor === 'secondary'
+      }"
+    >
+      {{ label }}
+    </span>
+    <input
+      #input
+      [(ngModel)]="value"
+      (ngModelChange)="updateValue()"
+      (focus)="isFocus = true"
+      (blur)="isFocus = false"
+      class="input"
+      [type]="type"
+    >
+  </label>
   <span
     class="placeholder"
     [ngClass]="{

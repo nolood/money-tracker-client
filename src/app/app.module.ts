@@ -8,6 +8,7 @@ import {RegisterPageComponent} from './pages/register-page/register-page.compone
 import {AuthLayoutComponent} from './shared/layouts/auth-layout/auth-layout.component';
 import {MainLayoutComponent} from './shared/layouts/main-layout/main-layout.component';
 import {AuthModule} from "./modules/auth/auth.module";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -17,11 +18,9 @@ import {AuthModule} from "./modules/auth/auth.module";
     AuthLayoutComponent,
     MainLayoutComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, AuthModule],
+  imports: [BrowserModule, AppRoutingModule, AuthModule, NgOptimizedImage],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [
-  ]
+  exports: [],
 })
-export class AppModule {
-}
+export class AppModule {}
