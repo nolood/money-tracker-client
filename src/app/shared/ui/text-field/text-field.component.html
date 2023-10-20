@@ -16,7 +16,7 @@
       (focus)="isFocus = true"
       (blur)="isFocus = false"
       class="input"
-      [type]="type"
+      [type]="type || 'text'"
     >
   </label>
   <span
@@ -27,4 +27,8 @@
   >
     {{ placeholder }}
   </span>
+<!--  <div *ngIf="control?.invalid && (control.dirty || control.touched)">-->
+<!--    <div *ngIf="control.hasError('required')">This field is required.</div>-->
+<!--    <div *ngIf="control.hasError('customValidation')">Custom validation failed.</div>-->
+<!--  </div>-->
 </div>

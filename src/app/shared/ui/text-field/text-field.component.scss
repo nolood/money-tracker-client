@@ -5,6 +5,10 @@
   padding: 25px 10px 18px 10px;
   background-color: $dark;
   border-radius: 10px;
+  transition: all 0.2s ease;
+  &:focus-within {
+    outline: 1px solid $accent-main;
+  }
 }
 
 .placeholder {
