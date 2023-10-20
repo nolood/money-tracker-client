@@ -1,18 +1,14 @@
+// app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
   {
-    path: 'login',
-    title: 'TM | Login',
-    component: LoginPageComponent,
-  },
-  {
-    path: 'register',
-    title: 'TM | Registration',
-    component: RegisterPageComponent,
+    path: 'auth',
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
 ];
 

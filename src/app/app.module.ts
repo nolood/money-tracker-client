@@ -1,26 +1,25 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {LoginPageComponent} from './pages/login-page/login-page.component';
-import {RegisterPageComponent} from './pages/register-page/register-page.component';
-import {AuthLayoutComponent} from './shared/layouts/auth-layout/auth-layout.component';
-import {MainLayoutComponent} from './shared/layouts/main-layout/main-layout.component';
-import {AuthModule} from "./modules/auth/auth.module";
-import {NgOptimizedImage} from "@angular/common";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component';
+import { NgOptimizedImage } from '@angular/common';
+import { AuthLayoutComponent } from './modules/auth/layouts/auth-layout/auth-layout.component';
+import { RouterModule } from '@angular/router';
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginPageComponent,
-    RegisterPageComponent,
-    AuthLayoutComponent,
-    MainLayoutComponent,
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgOptimizedImage,
+    RouterModule.forRoot([
+      { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+    ]),
+    AuthModule,
   ],
-  imports: [BrowserModule, AppRoutingModule, AuthModule, NgOptimizedImage],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [],
 })
 export class AppModule {}

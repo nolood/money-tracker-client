@@ -5,11 +5,7 @@ import {
   Input,
   ViewChild,
 } from '@angular/core';
-import {
-  ControlValueAccessor,
-  FormControl,
-  NG_VALUE_ACCESSOR,
-} from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { TextFieldLabelColor } from './text-field.interface';
 
 @Component({
@@ -30,7 +26,6 @@ export class TextFieldComponent implements ControlValueAccessor {
   @Input() label?: string;
   @Input() labelColor?: TextFieldLabelColor;
   @Input() type?: 'text' | 'password';
-  // @Input() control: FormControl;
   @ViewChild('input') input?: ElementRef;
 
   value: string = '';

@@ -40,4 +40,10 @@
   font-style: normal;
   font-weight: 700;
   cursor: pointer;
+  box-shadow: #0a55aa 0px 8px 0;
+  transition: all 0.2s ease;
+  &:active {
+    transform: translateY(4px);
+    box-shadow: #0a55aa 0px 4px 0;
+  }
 }
