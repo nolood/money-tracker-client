@@ -6,8 +6,21 @@
   background-color: $dark;
   border-radius: 10px;
   transition: all 0.2s ease;
-  &:focus-within {
-    outline: 1px solid $accent-main;
+  &.main {
+    &:focus-within {
+      outline: 1px solid $accent-main;
+    }
+  }
+  &.secondary {
+    &:focus-within {
+      outline: 1px solid $accent-secondary;
+    }
+  }
+  &.error {
+    outline: 1px solid $error;
+    &:focus-within {
+      outline: 1px solid $error;
+    }
   }
 }
 
@@ -42,6 +55,9 @@
   &.secondary {
     color: $accent-secondary;
   }
+  &.error {
+    color: $error;
+  }
 }
 
 .input {
@@ -51,4 +67,38 @@
   outline: none;
   background-color: $dark;
   border: none;
+}
+
+p.error {
+  position: absolute;
+  right: 0;
+  bottom: -1.2rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: $error;
+}
+
+.eye {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  &.main {
+    stroke: $accent-main;
+    &:hover {
+      stroke: $accent-main-dark;
+    }
+  }
+  &.secondary {
+    stroke: $accent-secondary;
+    &:hover {
+      stroke: $accent-secondary-dark;
+    }
+  }
+  &.error {
+    stroke: $error;
+  }
 }

@@ -4,15 +4,17 @@ import { AuthService } from '../../services/auth.service';
 import { NotificationService } from '../../../notifications/services/notification.service';
 
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss'],
+  selector: 'app-register-form',
+  templateUrl: './register-form.component.html',
+  styleUrls: ['./register-form.component.scss'],
 })
-export class LoginFormComponent {
-  loginForm?: FormGroup;
+export class RegisterFormComponent {
+  form?: FormGroup;
   fieldsTouched = {
-    login: false,
+    email: false,
+    username: false,
     password: false,
+    repeatPassword: false,
   };
 
   constructor(
@@ -24,22 +26,32 @@ export class LoginFormComponent {
   }
 
   private _createForm() {
-    this.loginForm = this.formBuilder.group({
-      login: ['', Validators.required],
+    this.form = this.formBuilder.group({
+      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required],
+      repeatPassword: ['', Validators.required],
     });
   }
 
-  get _login() {
-    return this.loginForm?.get('login');
+  get _username() {
+    return this.form?.get('username');
+  }
+
+  get _email() {
+    return this.form?.get('email');
+  }
+
+  get _repeatPassword() {
+    return this.form?.get('repeatPassword');
   }
 
   get _password() {
-    return this.loginForm?.get('password');
+    return this.form?.get('password');
   }
 
   submit() {
-    console.log(this.loginForm?.getRawValue());
+    console.log(this.form?.getRawValue());
   }
 
   sendNotification() {

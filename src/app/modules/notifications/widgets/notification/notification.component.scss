@@ -1,0 +1,30 @@
+@import "../../../../shared/styles/_variables.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  color: $white;
+  border-radius: 12px;
+  padding: 12px;
+  animation: fadeIn 1s ease forwards;
+  &.error {
+    background-color: $error;
+  }
+}
+
+.close {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

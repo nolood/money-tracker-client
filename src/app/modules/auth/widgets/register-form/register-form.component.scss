@@ -17,7 +17,7 @@
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  color: $accent-main;
+  color: $accent-secondary;
 }
 
 .wrapper {
@@ -33,7 +33,7 @@
   width: 100%;
   padding: 8px 0;
   margin-top: 60px;
-  background: $accent-main;
+  background: $accent-secondary;
   color: $white;
   border-radius: 10px;
   border: none;
@@ -41,11 +41,11 @@
   font-style: normal;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: #0a55aa 0px 8px 0;
+  box-shadow: #41a996 0px 8px 0;
   transition: all 0.2s ease;
   &:active {
     transform: translateY(4px);
-    box-shadow: #0a55aa 0px 4px 0;
+    box-shadow: #41a996 0px 4px 0;
   }
 }
 
@@ -53,6 +53,6 @@
   margin-top: 30px;
   color: $white;
   > a {
-    color: $accent-main;
+    color: $accent-secondary;
   }
 }

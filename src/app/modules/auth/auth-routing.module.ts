@@ -9,8 +9,16 @@ const authRoutes: Routes = [
     path: 'auth',
     component: AuthLayoutComponent,
     children: [
-      { path: 'login', component: LoginPageComponent },
-      { path: 'register', component: RegisterPageComponent },
+      {
+        path: 'login',
+        component: LoginPageComponent,
+        title: 'TM | Login',
+      },
+      {
+        path: 'register',
+        component: RegisterPageComponent,
+        title: 'TM | Register',
+      },
     ],
   },
 ];

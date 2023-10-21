@@ -1,0 +1,6 @@
+<ul class="wrapper">
+  <app-notification
+    *ngFor="let item of notificationService.data"
+    [item]="item"
+  ></app-notification>
+</ul>

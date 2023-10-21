@@ -7,18 +7,23 @@
   <h1 class="heading">Login</h1>
   <div class="wrapper">
     <app-text-field
+      [error]="fieldsTouched.login ? (_login?.errors | formValidationErrors) : null"
+      (blur)="fieldsTouched.login = true"
       formControlName="login"
       placeholder="Enter your username or email"
       label="Username/Email*:"
       labelColor="main"
     ></app-text-field>
     <app-text-field
+      [error]="fieldsTouched.password ? (_password?.errors | formValidationErrors) : null"
+      (blur)="fieldsTouched.password = true"
       formControlName="password"
       placeholder="Enter your password"
       label="Password*:"
       labelColor="main"
       type="password"
     ></app-text-field>
-    <button type="submit" [disabled]="!loginForm.valid" class="btn">Log in</button>
   </div>
+  <button type="submit" [disabled]="!loginForm.valid" class="btn">Log in</button>
+  <p class="text">Dont have an account? <a routerLink="/auth/register">Sign up!</a></p>
 </form>

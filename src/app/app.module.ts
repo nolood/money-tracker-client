@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component';
 import { NgOptimizedImage } from '@angular/common';
-import { AuthLayoutComponent } from './modules/auth/layouts/auth-layout/auth-layout.component';
 import { RouterModule } from '@angular/router';
+import { NotificationsModule } from './modules/notifications/notifications.module';
 import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
@@ -17,9 +16,11 @@ import { AuthModule } from './modules/auth/auth.module';
     RouterModule.forRoot([
       { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
     ]),
+    NotificationsModule,
     AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [],
 })
 export class AppModule {}

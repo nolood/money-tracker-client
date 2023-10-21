@@ -16,5 +16,8 @@
 
 .peeps {
   object-fit: cover;
-  width: 50%
+  width: 50%;
+  @media (max-width: 1455px) {
+    display: none;
+  }
 }

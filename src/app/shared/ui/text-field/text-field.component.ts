@@ -1,8 +1,10 @@
 import {
   Component,
   ElementRef,
+  EventEmitter,
   forwardRef,
   Input,
+  Output,
   ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -22,12 +24,16 @@ import { TextFieldLabelColor } from './text-field.interface';
 })
 export class TextFieldComponent implements ControlValueAccessor {
   @Input() placeholder?: string;
-  @Input() error?: string;
+  @Input() error?: string | null;
   @Input() label?: string;
   @Input() labelColor?: TextFieldLabelColor;
   @Input() type?: 'text' | 'password';
-  @ViewChild('input') input?: ElementRef;
+  @Output() focus = new EventEmitter<any>();
+  @Output() blur = new EventEmitter<any>();
+  @ViewChild('input')
+  input?: ElementRef;
 
+  localType = this.type;
   value: string = '';
 
   writeValue(value: string): void {
@@ -46,9 +52,28 @@ export class TextFieldComponent implements ControlValueAccessor {
     this.onChange(this.value);
   }
 
-  focus() {
+  focusInput(e: Event) {
+    e.stopPropagation();
     if (!this.isFocus) {
       this.input?.nativeElement.focus();
+    }
+  }
+
+  onFocus() {
+    this.isFocus = true;
+    this.focus.emit();
+  }
+
+  onBlur() {
+    this.isFocus = false;
+    this.blur.emit();
+  }
+
+  changeLocalType() {
+    if (this.localType === 'text') {
+      this.localType = 'password';
+    } else {
+      this.localType = 'text';
     }
   }
 
