@@ -1,7 +1,7 @@
 <form
   *ngIf="loginForm"
   [formGroup]="loginForm"
-  (submit)="console.log(loginForm.getRawValue())"
+  (submit)="submit()"
   class="form"
 >
   <h1 class="heading">Login</h1>

@@ -20,13 +20,7 @@ export class LoginFormComponent {
     });
   }
 
-  get _login() {
-    return this.loginForm?.get('login');
+  submit() {
+    console.log(this.loginForm?.getRawValue());
   }
-
-  get _password() {
-    return this.loginForm?.get('password');
-  }
-
-  protected readonly console = console;
 }
