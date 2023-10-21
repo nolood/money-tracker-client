@@ -6,6 +6,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { CalendarModule } from './modules/calendar/calendar.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,9 +16,11 @@ import { AuthModule } from './modules/auth/auth.module';
     NgOptimizedImage,
     RouterModule.forRoot([
       { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+      { path: 'calendar', redirectTo: 'calendar/main', pathMatch: 'full' },
     ]),
     NotificationsModule,
     AuthModule,
+    CalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

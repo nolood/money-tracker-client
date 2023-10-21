@@ -5,6 +5,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
 const authRoutes: Routes = [
+  { path: 'auth', redirectTo: 'auth/login', pathMatch: 'full' },
   {
     path: 'auth',
     component: AuthLayoutComponent,

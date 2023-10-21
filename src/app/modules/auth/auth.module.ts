@@ -10,7 +10,6 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { LoginFormComponent } from './widgets/login-form/login-form.component';
 import { FormValidationErrorsPipe } from '../../shared/pipes/validation-errors.pipe';
 import { RegisterFormComponent } from './widgets/register-form/register-form.component';
-import { StringPipe } from '../../shared/pipes/string.pipe';
 
 @NgModule({
   declarations: [
