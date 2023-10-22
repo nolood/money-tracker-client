@@ -5,10 +5,17 @@ import { CalendarDayComponent } from './pages/calendar-day/calendar-day.componen
 import { MainLayoutComponent } from '../../shared/layouts/main-layout/main-layout.component';
 import { RouterOutlet } from '@angular/router';
 import { CalendarRoutingModule } from './calendar-routing.module';
-import {CoreModule} from "../../core/core.module";
+import { CoreModule } from '../../core/core.module';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [CalendarComponent, CalendarDayComponent, MainLayoutComponent],
-  imports: [CommonModule, RouterOutlet, CalendarRoutingModule, CoreModule],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    CalendarRoutingModule,
+    CoreModule,
+    MatIconModule,
+  ],
 })
 export class CalendarModule {}

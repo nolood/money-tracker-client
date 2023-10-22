@@ -1,1 +1,46 @@
-<p>calendar works! adsdasd</p>
+<div class="calendar__header">
+  <h1 class="heading">Calendar</h1>
+
+  <div class="calendar__navbar">
+    <div class="month">
+      <p (click)="today()" class="currentday">Today</p>
+    </div>
+    <div class="month">
+      <mat-icon (click)="changeMonth(-1)" class="arrow">chevron_left</mat-icon>
+      <p class="month__title">{{currentDate.toFormat('MMMM')}}</p>
+      <mat-icon (click)="changeMonth(1)" class="arrow">chevron_right</mat-icon>
+    </div>
+    <div class="year">
+      <mat-icon (click)="changeYear(-1)" class="arrow">chevron_left</mat-icon>
+      <p class="year__title">{{currentDate.toFormat('yyyy')}}</p>
+      <mat-icon (click)="changeYear(1)" class="arrow">chevron_right</mat-icon>
+    </div>
+  </div>
+</div>
+
+
+<div class="calendar__main">
+  <table class="calendar">
+    <tr>
+      <th class="dayofweek" *ngFor="let day of daysOfWeek">{{ day }}</th>
+    </tr>
+    <tr class="week" *ngFor="let row of calendarDates; let rowIndex = index">
+      <td
+        [ngClass]="{
+        day: true,
+        today: isToday(date),
+        weekend: isWeekend(date),
+        other: isOtherMonth(date)
+      }"
+        *ngFor="let date of calendarDates.slice(rowIndex * 7, (rowIndex + 1) * 7)"
+      >
+        <div class="day__item">
+          <div class="day__item-title">{{ date.toFormat('d') }}</div>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div class="filters__container">
+    <h2 class="filters__title">Filters</h2>
+  </div>
+</div>
