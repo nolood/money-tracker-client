@@ -1,0 +1,15 @@
+@import "../../../../shared/styles/_variables";
+
+.filters__container {
+  flex: 1;
+  margin-left: 30px;
+  padding: 4px 6px;
+  height: 80%;
+  border-radius: 12px;
+  background-color: $dark;
+}
+
+.filters__title {
+  color: $dark-text;
+  text-align: center;
+}

@@ -1,0 +1,20 @@
+<table class="calendar">
+  <tr>
+    <th class="dayofweek" *ngFor="let day of calendarService.daysOfWeek">{{ day }}</th>
+  </tr>
+  <tr class="week" *ngFor="let row of calendarService.calendarDates; let rowIndex = index">
+    <td
+      [ngClass]="{
+        day: true,
+        today: calendarService.isToday(date),
+        weekend: calendarService.isWeekend(date),
+        other: calendarService.isOtherMonth(date)
+      }"
+      *ngFor="let date of calendarService.calendarDates.slice(rowIndex * 7, (rowIndex + 1) * 7)"
+    >
+      <div class="day__item">
+        <div class="day__item-title">{{ date.toFormat('d') }}</div>
+      </div>
+    </td>
+  </tr>
+</table>

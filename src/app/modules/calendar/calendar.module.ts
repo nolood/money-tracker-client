@@ -7,9 +7,12 @@ import { RouterOutlet } from '@angular/router';
 import { CalendarRoutingModule } from './calendar-routing.module';
 import { CoreModule } from '../../core/core.module';
 import { MatIconModule } from '@angular/material/icon';
+import { CalendarControlsComponent } from './widgets/calendar-controls/calendar-controls.component';
+import { CalendarTableComponent } from './widgets/calendar-table/calendar-table.component';
+import { CalendarFiltersComponent } from './widgets/calendar-filters/calendar-filters.component';
 
 @NgModule({
-  declarations: [CalendarComponent, CalendarDayComponent, MainLayoutComponent],
+  declarations: [CalendarComponent, CalendarDayComponent, MainLayoutComponent, CalendarControlsComponent, CalendarTableComponent, CalendarFiltersComponent],
   imports: [
     CommonModule,
     RouterOutlet,

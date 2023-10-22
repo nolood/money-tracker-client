@@ -18,7 +18,6 @@ export class LoginFormComponent {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private notificationService: NotificationService,
   ) {
     this._createForm();
   }
@@ -39,13 +38,7 @@ export class LoginFormComponent {
   }
 
   submit() {
-    console.log(this.loginForm?.getRawValue());
-  }
-
-  sendNotification() {
-    this.notificationService.add({
-      type: 'error',
-      message: 'Error',
-    });
+    const data = this.loginForm?.getRawValue();
+    this.authService.login(data);
   }
 }

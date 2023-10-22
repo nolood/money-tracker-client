@@ -51,7 +51,8 @@ export class RegisterFormComponent {
   }
 
   submit() {
-    console.log(this.form?.getRawValue());
+    const data = this.form?.getRawValue();
+    this.authService.register(data);
   }
 
   sendNotification() {

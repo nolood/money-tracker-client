@@ -10,6 +10,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { LoginFormComponent } from './widgets/login-form/login-form.component';
 import { FormValidationErrorsPipe } from '../../shared/pipes/validation-errors.pipe';
 import { RegisterFormComponent } from './widgets/register-form/register-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RegisterFormComponent } from './widgets/register-form/register-form.com
   exports: [],
   providers: [AuthService],
   imports: [
+    HttpClientModule,
     AuthRoutingModule,
     CommonModule,
     UiModule,
