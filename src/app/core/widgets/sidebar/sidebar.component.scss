@@ -1,0 +1,48 @@
+@import "../../../shared/styles/_variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 220px;
+  padding: 10px 20px;
+  border-right: 1px solid $dark-light;
+  background-color: $dark-half;
+}
+
+.heading {
+  color: $dark-text;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+  list-style: none;
+}
+
+.img {
+  color: $white;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  padding: 3px 5px;
+  border-radius: 5px;
+  color: $white;
+  font-size: 14px;
+  cursor: pointer;
+  &:hover {
+    background-color: $dark-text;
+  }
+  &.active {
+    background-color: $accent-main;
+  }
+}

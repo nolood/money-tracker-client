@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { CalendarModule } from './modules/calendar/calendar.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { CalendarModule } from './modules/calendar/calendar.module';
     NotificationsModule,
     AuthModule,
     CalendarModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
