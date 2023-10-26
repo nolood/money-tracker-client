@@ -23,6 +23,7 @@
   padding: 0;
   margin: 0;
   border: 1px solid $dark-text;
+  cursor: pointer;
   &.today {
     border: 2px solid $accent-main;
   }
@@ -35,6 +36,11 @@
   &.other {
     background-color: $dark;
   }
+
+  &:hover {
+    outline: 1px solid $accent-secondary;
+  }
+
 }
 
 .day__item {

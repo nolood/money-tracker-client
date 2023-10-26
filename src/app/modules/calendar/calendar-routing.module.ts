@@ -6,7 +6,16 @@ import { CalendarDayComponent } from './pages/calendar-day/calendar-day.componen
 import { authGuard } from '../../shared/guards/auth.guard';
 
 const calendarRoutes: Routes = [
-  { path: 'calendar', redirectTo: 'calendar/main', pathMatch: 'full' },
+  {
+    path: 'calendar',
+    redirectTo: 'calendar/view',
+    pathMatch: 'full',
+  },
+  {
+    path: 'calendar/day',
+    redirectTo: 'calendar/view',
+    pathMatch: 'full',
+  },
   {
     path: 'calendar',
     component: MainLayoutComponent,
@@ -18,7 +27,7 @@ const calendarRoutes: Routes = [
         canActivate: [authGuard],
       },
       {
-        path: 'day',
+        path: 'day/:date',
         component: CalendarDayComponent,
         title: 'TM | Day',
         canActivate: [authGuard],

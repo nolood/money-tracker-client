@@ -1,6 +1,6 @@
 <div class="calendar__navbar">
   <div class="month">
-    <p (click)="calendarService.today()" class="currentday">Today - {{calendarService.todayDate.toFormat('dd.MM.yyyy')}}</p>
+    <button (click)="calendarService.today()" class="currentday">Today - {{calendarService.todayDate.toFormat('dd.MM.yyyy')}}</button>
   </div>
   <div class="month">
     <mat-icon (click)="calendarService.changeMonth(-1)" class="arrow">chevron_left</mat-icon>

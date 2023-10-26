@@ -48,6 +48,8 @@
   font-size: 22px;
   text-transform: uppercase;
   color: $white;
+  border: none;
+  outline: none;
   background-color: $accent-main;
   cursor: pointer;
   user-select: none;
@@ -56,6 +58,6 @@
     background-color: $accent-main-dark;
   }
   &:hover {
-    box-shadow: 0 0 10px $accent-main;
+    @include shadow($accent-main)
   }
 }

@@ -11,6 +11,7 @@
         other: calendarService.isOtherMonth(date)
       }"
       *ngFor="let date of calendarService.calendarDates.slice(rowIndex * 7, (rowIndex + 1) * 7)"
+      (click)="navigateToDay(date)"
     >
       <div class="day__item">
         <div class="day__item-title">{{ date.toFormat('d') }}</div>

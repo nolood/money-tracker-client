@@ -18,8 +18,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     AppRoutingModule,
     NgOptimizedImage,
     RouterModule.forRoot([
-      { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
-      { path: 'calendar', redirectTo: 'calendar/main', pathMatch: 'full' },
+      { path: '', redirectTo: 'calendar', pathMatch: 'full' },
     ]),
     NotificationsModule,
     AuthModule,

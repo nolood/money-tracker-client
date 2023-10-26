@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class UserService {
-  private isAuth: boolean = false;
+  private isAuth: boolean = true;
   private user: IUser | null = null;
   private baseUrl = environment.apiBaseUrl;
 
@@ -37,14 +37,11 @@ export class UserService {
   }
 
   public getSelf(): void {
-    const token = this.getToken();
-    if (token) {
-      const url = `${this.baseUrl}/users/self`;
-      this.http.get<IUser>(url).subscribe((data) => {
-        this.setUser(data);
-        this.setIsAuth(true);
-        console.log(data);
-      });
-    }
+    const url = `${this.baseUrl}/users/self`;
+    this.http.get<IUser>(url).subscribe((data) => {
+      this.setUser(data);
+      this.setIsAuth(true);
+      console.log(data);
+    });
   }
 }

@@ -13,3 +13,8 @@ $success: #4ECB71;
 $info: #85B6FF;
 $warning: #FFD233;
 $white: #fff;
+
+
+@mixin shadow($color) {
+  box-shadow: 0 0 10px $color;
+}
