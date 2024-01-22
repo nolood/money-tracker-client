@@ -1,0 +1,27 @@
+@import '../../../../shared/styles/_variables';
+
+.heading {
+  font-size: 32px;
+  font-weight: 600;
+  color: $white;
+}
+
+.calendar__main {
+  display: flex;
+  height: 100%;
+}
+
+.calendar__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.table {
+  width: 80%;
+  height: 80%;
+}
+
+.filters {
+  flex: 1;
+}

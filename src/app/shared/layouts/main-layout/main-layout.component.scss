@@ -1,0 +1,21 @@
+@import '../../styles/_variables.scss';
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.outlet {
+  width: 100%;
+  padding: 20px;
+}
+
+.page {
+  background-color: $dark-half;
+  padding: 15px;
+  height: 100%;
+}

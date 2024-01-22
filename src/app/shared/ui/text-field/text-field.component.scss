@@ -1,0 +1,104 @@
+@import '../../styles/_variables.scss';
+
+.wrapper {
+  position: relative;
+  padding: 25px 10px 18px 10px;
+  background-color: $dark;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  &.main {
+    &:focus-within {
+      outline: 1px solid $accent-main;
+    }
+  }
+  &.secondary {
+    &:focus-within {
+      outline: 1px solid $accent-secondary;
+    }
+  }
+  &.error {
+    outline: 1px solid $error;
+    &:focus-within {
+      outline: 1px solid $error;
+    }
+  }
+}
+
+.placeholder {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: $dark-light;
+  user-select: none;
+  cursor: text;
+  transform: translateY(-50%);
+  transition: all 0.2s ease;
+  &.active {
+    font-size: 0.8rem;
+    transform: translateY(-100%);
+    top: 20px;
+  }
+}
+
+.label {
+  position: absolute;
+  left: 0;
+  top: -1.2rem;
+  font-weight: 600;
+  font-size: 14px;
+  color: $white;
+  &.main {
+    color: $accent-main;
+  }
+  &.secondary {
+    color: $accent-secondary;
+  }
+  &.error {
+    color: $error;
+  }
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  color: $white;
+  outline: none;
+  background-color: $dark;
+  border: none;
+}
+
+p.error {
+  position: absolute;
+  right: 0;
+  bottom: -2rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: $error;
+}
+
+.eye {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  &.main {
+    stroke: $accent-main;
+    &:hover {
+      stroke: $accent-main-dark;
+    }
+  }
+  &.secondary {
+    stroke: $accent-secondary;
+    &:hover {
+      stroke: $accent-secondary-dark;
+    }
+  }
+  &.error {
+    stroke: $error;
+  }
+}

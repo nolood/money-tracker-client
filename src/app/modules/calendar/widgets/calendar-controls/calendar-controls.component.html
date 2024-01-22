@@ -1,0 +1,15 @@
+<div class="calendar__navbar">
+  <div class="month">
+    <button (click)="calendarService.today()" class="currentday">Today - {{calendarService.todayDate.toFormat('dd.MM.yyyy')}}</button>
+  </div>
+  <div class="month">
+    <mat-icon (click)="calendarService.changeMonth(-1)" class="arrow">chevron_left</mat-icon>
+    <p class="month__title">{{calendarService.currentDate.toFormat('MMMM')}}</p>
+    <mat-icon (click)="calendarService.changeMonth(1)" class="arrow">chevron_right</mat-icon>
+  </div>
+  <div class="year">
+    <mat-icon (click)="calendarService.changeYear(-1)" class="arrow">chevron_left</mat-icon>
+    <p class="year__title">{{calendarService.currentDate.toFormat('yyyy')}}</p>
+    <mat-icon (click)="calendarService.changeYear(1)" class="arrow">chevron_right</mat-icon>
+  </div>
+</div>

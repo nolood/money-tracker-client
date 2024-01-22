@@ -1,0 +1,63 @@
+@import "../../../../shared/styles/_variables";
+
+.calendar__navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.month,
+.year {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: -15px;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: $white;
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    &:hover {
+      background-color: $gray-half;
+    }
+  }
+}
+
+.month__title,
+.year__title {
+  min-width: 200px;
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px 0;
+  background-color: $gray-half;
+  border-radius: 10px;
+}
+
+
+.currentday {
+  @extend .month__title;
+  min-width: 300px;
+  margin-right: 20px;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: $white;
+  border: none;
+  outline: none;
+  background-color: $accent-main;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.1s linear;
+  &:active {
+    background-color: $accent-main-dark;
+  }
+  &:hover {
+    @include shadow($accent-main)
+  }
+}

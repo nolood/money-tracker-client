@@ -1,0 +1,27 @@
+@import "../../../shared/styles/_variables.scss";
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 20px;
+  border-bottom: 1px solid $dark-light;
+  background-color: $dark-half;
+}
+
+.logo {
+  font-size: 20px;
+  color: $accent-main;
+  text-decoration: none;
+  span {
+    color: $accent-secondary;
+  }
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}

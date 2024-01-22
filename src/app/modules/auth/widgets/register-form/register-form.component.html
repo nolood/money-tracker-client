@@ -1,0 +1,46 @@
+<form
+  *ngIf="form"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  class="form"
+>
+  <h1 class="heading">Register</h1>
+  <div class="wrapper">
+    <app-text-field
+      [error]="fieldsTouched.email ? (_email?.errors | formValidationErrors) : null"
+      (blur)="fieldsTouched.email = true"
+      formControlName="email"
+      placeholder="Enter your email"
+      label="Email*:"
+      labelColor="secondary"
+    ></app-text-field>
+    <app-text-field
+      [error]="fieldsTouched.username ? (_username?.errors | formValidationErrors) : null"
+      (blur)="fieldsTouched.username = true"
+      formControlName="username"
+      placeholder="Enter your username"
+      label="Username*:"
+      labelColor="secondary"
+    ></app-text-field>
+    <app-text-field
+      [error]="fieldsTouched.password ? (_password?.errors | formValidationErrors) : null"
+      (blur)="fieldsTouched.password = true"
+      formControlName="password"
+      placeholder="Enter your password"
+      label="Password*:"
+      labelColor="secondary"
+      type="password"
+    ></app-text-field>
+    <app-text-field
+      [error]="fieldsTouched.repeatPassword ? (_repeatPassword?.errors | formValidationErrors) : null"
+      (blur)="fieldsTouched.repeatPassword = true"
+      formControlName="repeatPassword"
+      placeholder="Repeat your password"
+      label="Repeat password*:"
+      labelColor="secondary"
+      type="password"
+    ></app-text-field>
+  </div>
+  <button type="submit" [disabled]="!form.valid" class="btn">Sign up</button>
+  <p class="text">Already have an account? <a routerLink="/auth/login">Log in!</a></p>
+</form>

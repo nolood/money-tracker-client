@@ -1,0 +1,57 @@
+@import "../../../../shared/styles/_variables.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 20px;
+  background: $dark-half;
+  border-radius: 20px;
+}
+
+.heading {
+  margin-bottom: 76px;
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  color: $accent-secondary;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px 0;
+  margin-top: 60px;
+  background: $accent-secondary;
+  color: $white;
+  border-radius: 10px;
+  border: none;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: #41a996 0px 8px 0;
+  transition: all 0.2s ease;
+  &:active {
+    transform: translateY(4px);
+    box-shadow: #41a996 0px 4px 0;
+  }
+}
+
+.text {
+  margin-top: 30px;
+  color: $white;
+  > a {
+    color: $accent-secondary;
+  }
+}

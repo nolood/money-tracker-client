@@ -1,0 +1,9 @@
+<div class="container">
+  <p class="heading">your workspace</p>
+  <ul class="list">
+    <li [ngClass]="['item', item.active ? 'active' : '']" *ngFor="let item of items">
+      <mat-icon class="img">{{item.icon}}</mat-icon>
+      {{item.title}}
+    </li>
+  </ul>
+</div>
